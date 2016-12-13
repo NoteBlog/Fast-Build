@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Fast-Build.iml" filepath="$PROJECT_DIR$/Fast-Build.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spl/Sample.iml" filepath="$PROJECT_DIR$/spl/Sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/spl/spl.iml" filepath="$PROJECT_DIR$/spl/spl.iml" />
     </modules>
