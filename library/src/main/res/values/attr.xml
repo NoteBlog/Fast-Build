@@ -63,16 +63,38 @@
     <!-- RefreshLoadLayout -->
     <declare-styleable name="RefreshLoadLayout">
         <!-- 当数据为空时，页面展示 -->
-        <attr name="empty_layout" format="reference"/>
+        <attr name="empty_layout" format="reference" />
         <!-- 当网络错误时，页面展示 -->
-        <attr name="error_layout" format="reference"/>
+        <attr name="error_layout" format="reference" />
         <!-- 加载更多失败时，页面展示 -->
-        <attr name="load_more_failed_layout" format="reference"/>
+        <attr name="load_more_failed_layout" format="reference" />
         <!-- 加载更多的视图 -->
-        <attr name="load_more_layout" format="reference"/>
+        <attr name="load_more_layout" format="reference" />
         <!-- 加载内容时的进度条 -->
-        <attr name="loading_layout" format="reference"/>
+        <attr name="loading_layout" format="reference" />
         <!-- 加载到底部时的视图 -->
-        <attr name="no_more_layout" format="reference"/>
+        <attr name="no_more_layout" format="reference" />
+    </declare-styleable>
+
+    <!-- TabLayout -->
+    <declare-styleable name="NavigationTab">
+        <attr name="nt_color" format="color" />
+        <attr name="nt_size" format="dimension" />
+        <attr name="nt_weight" format="dimension" />
+        <attr name="nt_factor" format="float" />
+        <attr name="nt_titles" format="reference" />
+        <attr name="nt_inactive_color" format="color" />
+        <attr name="nt_active_color" format="color" />
+        <attr name="nt_typeface" format="string" />
+        <attr name="nt_corners_radius" format="dimension" />
+        <attr name="nt_animation_duration" format="integer" />
+        <attr name="nt_type" format="enum">
+            <enum name="line" value="0" />
+            <enum name="point" value="1" />
+        </attr>
+        <attr name="nt_gravity" format="enum">
+            <enum name="bottom" value="0" />
+            <enum name="top" value="1" />
+        </attr>
     </declare-styleable>
 </resources>

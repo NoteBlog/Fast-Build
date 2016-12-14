@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_navigation_6">6dp</dimen>
+    <dimen name="bottom_navigation_8">8dp</dimen>
+    <dimen name="bottom_navigation_12">12dp</dimen>
+    <dimen name="bottom_navigation_14">14sp</dimen>
+    <dimen name="bottom_navigation_16">16dp</dimen>
+    <dimen name="bottom_navigation_56">56dp</dimen>
+    <dimen name="bottom_navigation_64">64dp</dimen>
+    <dimen name="bottom_navigation_96">96dp</dimen>
+    <dimen name="bottom_navigation_104">104dp</dimen>
+    <dimen name="bottom_navigation_120">120dp</dimen>
+</resources>
