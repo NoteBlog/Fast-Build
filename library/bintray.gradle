@@ -1,0 +1,103 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+// 读取配置文件
+Properties properties = new Properties()
+properties.load(project.file('bintray.properties').newDataInputStream())
+
+def siteUrl = properties.getProperty("bintray.siteUrl")   // GitHub项目的主页
+def gitUrl = properties.getProperty("bintray.gitUrl")   // Git仓库的ssh key
+
+def desc = properties.getProperty("bintray.descrip")
+
+def userId = properties.getProperty("bintray.userId")
+def userName = properties.getProperty("bintray.userName")
+def userEmail = properties.getProperty("bintray.userEmail")
+
+def licensename = properties.getProperty("bintray.licensename")
+def licenseurl = properties.getProperty("bintray.licenseurl")
+
+// 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
+// 这个version影响后面的引用
+version = properties.getProperty("bintray.version")
+group = properties.getProperty("bintray.group") // 一般填你唯一的包名
+
+// 配置maven库，生成POM.xml文件
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                // Add your description here 项目的描述 你可以多写一点
+                name desc
+                url siteUrl
+                // Set your license
+                licenses {
+                    license {
+                        name licensename
+                        url licenseurl
+                    }
+                }
+                developers {
+                    developer {
+                        // 开发者的信息
+                        id userId // 组织ID
+                        name userName // 用户first name
+                        email userEmail // 用户邮箱
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+// 生成源文件
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+// 生成文档
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding = 'UTF-8'
+    options.charSet = 'UTF-8'
+    failOnError = false
+}
+// 文档打包成jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+// 拷贝javadoc文件
+task copyDoc(type: Copy) {
+    from "${buildDir}/docs/"
+    into "docs"
+}
+
+// 上传到jcenter所需要的源码文件
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+// 上传到jcenter
+bintray {
+    user = properties.getProperty("bintray.user") // bintray 用户名
+    key = properties.getProperty("bintray.key") // bintray 用户key
+    configurations = ['archives']
+    pkg {
+        userOrg = properties.getProperty("bintray.userOrg") // 组织名称
+        repo = properties.getProperty("bintray.repo") // 仓库名称
+        name = properties.getProperty("bintray.name") // 项目名称
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = [properties.getProperty("bintray.licenses")]
+        publish = true
+    }
+}

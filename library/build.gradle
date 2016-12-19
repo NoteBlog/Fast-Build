@@ -26,6 +26,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    // 使用embedded嵌入远程依赖到aar中
     embedded 'com.android.support:appcompat-v7:22.2.0'
     embedded 'com.android.support:design:22.2.0'
     embedded 'com.android.support:recyclerview-v7:23.0.0'
@@ -51,6 +52,8 @@ dependencies {
 
     // 移除某一个不需要合并的本地依赖库
     // compile (project(':library')) {
-        // transitive false
+    // transitive false
     // }
 }
+
+apply from: 'bintray.gradle'
