@@ -43,7 +43,7 @@ import cn.noteblog.library.util.UtilScreen;
  * 一个materal design风格的导航栏
  */
 @CoordinatorLayout.DefaultBehavior(ScrollingBehavior.class)
-public class BottomNavigation extends FrameLayout {
+public class NavigationBar extends FrameLayout {
 
     public static final int MODE_DEFAULT = 0;
     public static final int MODE_CLASSIC = 1;
@@ -95,23 +95,23 @@ public class BottomNavigation extends FrameLayout {
     private int mAnimationDuration = 200;
     private int mRippleAnimationDuration = 500;
 
-    public BottomNavigation(Context context) {
+    public NavigationBar(Context context) {
         super(context);
         init();
     }
 
-    public BottomNavigation(Context context, AttributeSet attrs) {
+    public NavigationBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public BottomNavigation(Context context, AttributeSet attrs, int defStyleAttr) {
+    public NavigationBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public BottomNavigation(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public NavigationBar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();
     }
@@ -140,17 +140,17 @@ public class BottomNavigation extends FrameLayout {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
-    public BottomNavigation addItem(BottomNavigationItem item) {
+    public NavigationBar addItem(BottomNavigationItem item) {
         mBottomNavigationItems.add(item);
         return this;
     }
 
-    public BottomNavigation removeItem(BottomNavigationItem item) {
+    public NavigationBar removeItem(BottomNavigationItem item) {
         mBottomNavigationItems.remove(item);
         return this;
     }
 
-    public BottomNavigation setMode(@Mode int mode) {
+    public NavigationBar setMode(@Mode int mode) {
         this.mMode = mode;
         return this;
     }
@@ -160,48 +160,48 @@ public class BottomNavigation extends FrameLayout {
 //        return this;
 //    }
 
-    public BottomNavigation setActiveColor(@ColorRes int activeColor) {
+    public NavigationBar setActiveColor(@ColorRes int activeColor) {
         this.mActiveColor = getContext().getResources().getColor(activeColor);
         return this;
     }
 
-    public BottomNavigation setActiveColor(String activeColorCode) {
+    public NavigationBar setActiveColor(String activeColorCode) {
         this.mActiveColor = Color.parseColor(activeColorCode);
         return this;
     }
 
-    public BottomNavigation setInActiveColor(@ColorRes int inActiveColor) {
+    public NavigationBar setInActiveColor(@ColorRes int inActiveColor) {
         this.mInActiveColor = getContext().getResources().getColor(inActiveColor);
         return this;
     }
 
-    public BottomNavigation setInActiveColor(String inActiveColorCode) {
+    public NavigationBar setInActiveColor(String inActiveColorCode) {
         this.mInActiveColor = Color.parseColor(inActiveColorCode);
         return this;
     }
 
-    public BottomNavigation setBarBackgroundColor(@ColorRes int backgroundColor) {
+    public NavigationBar setBarBackgroundColor(@ColorRes int backgroundColor) {
         this.mBackgroundColor = getContext().getResources().getColor(backgroundColor);
         return this;
     }
 
-    public BottomNavigation setBarBackgroundColor(String backgroundColorCode) {
+    public NavigationBar setBarBackgroundColor(String backgroundColorCode) {
         this.mBackgroundColor = Color.parseColor(backgroundColorCode);
         return this;
     }
 
-    public BottomNavigation setFirstSelectedPosition(int firstSelectedPosition) {
+    public NavigationBar setFirstSelectedPosition(int firstSelectedPosition) {
         this.mFirstSelectedPosition = firstSelectedPosition;
         return this;
     }
 
-    public BottomNavigation setAnimationDuration(int animationDuration) {
+    public NavigationBar setAnimationDuration(int animationDuration) {
         this.mAnimationDuration = animationDuration;
         this.mRippleAnimationDuration = (int) (animationDuration * 2.5);
         return this;
     }
 
-    public BottomNavigation setTabSelectedListener(OnTabSelectedListener tabSelectedListener) {
+    public NavigationBar setTabSelectedListener(OnTabSelectedListener tabSelectedListener) {
         this.mTabSelectedListener = tabSelectedListener;
         return this;
     }
@@ -598,8 +598,8 @@ public class BottomNavigation extends FrameLayout {
             return result;
         }
 
-        public static void bindTabWithData(BottomNavigationItem bottomNavigationItem, Tab bottomNavigationTab, BottomNavigation bottomNavigation) {
-            Context context = bottomNavigation.getContext();
+        public static void bindTabWithData(BottomNavigationItem bottomNavigationItem, Tab bottomNavigationTab, NavigationBar navigationBar) {
+            Context context = navigationBar.getContext();
             bottomNavigationTab.setLabel(bottomNavigationItem.getTitle(context));
             bottomNavigationTab.setIcon(bottomNavigationItem.getIcon(context));
             int activeColor = bottomNavigationItem.getActiveColor(context);
@@ -607,14 +607,14 @@ public class BottomNavigation extends FrameLayout {
             if (activeColor != -1) {
                 bottomNavigationTab.setActiveColor(activeColor);
             } else {
-                bottomNavigationTab.setActiveColor(bottomNavigation.getActiveColor());
+                bottomNavigationTab.setActiveColor(navigationBar.getActiveColor());
             }
             if (inActiveColor != -1) {
                 bottomNavigationTab.setInactiveColor(inActiveColor);
             } else {
-                bottomNavigationTab.setInactiveColor(bottomNavigation.getInActiveColor());
+                bottomNavigationTab.setInactiveColor(navigationBar.getInActiveColor());
             }
-            bottomNavigationTab.setItemBackgroundColor(bottomNavigation.getBackgroundColor());
+            bottomNavigationTab.setItemBackgroundColor(navigationBar.getBackgroundColor());
         }
 
         public static void setBackgroundWithRipple(View clickedView, final View backgroundView, final View bgOverlay, final int newColor, int animationDuration) {

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Fast-Build</string>
+
+    <string-array name="titles">
+        <item>Nav</item>
+        <item>Tab</item>
+        <item>Bar</item>
+    </string-array>
 </resources>
