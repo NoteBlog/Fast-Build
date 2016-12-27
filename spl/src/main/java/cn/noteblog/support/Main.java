@@ -7,12 +7,12 @@ import android.os.Bundle;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import cn.noteblog.library.widget.navigationbar.BottomNavigation;
+import cn.noteblog.library.widget.navigationbar.NavigationBar;
 
-public class Main extends AppCompatActivity implements BottomNavigation.OnTabSelectedListener {
+public class Main extends AppCompatActivity implements NavigationBar.OnTabSelectedListener {
 
     @InjectView(R.id.bottom_navigation_bar)
-    BottomNavigation navigation;
+    NavigationBar navigation;
 
     private FragmentManager mFragmentManager;
     private FragmentTest mFragmentHome;
@@ -30,11 +30,11 @@ public class Main extends AppCompatActivity implements BottomNavigation.OnTabSel
 
     private void init() {
         navigation
-                .setMode(BottomNavigation.MODE_CLASSIC)
-                .addItem(new BottomNavigation.BottomNavigationItem(R.mipmap.ic_home, "首页").setActiveColor(R.color.colorPrimary))
-                .addItem(new BottomNavigation.BottomNavigationItem(R.mipmap.ic_favorite, "兴趣").setActiveColor(R.color.colorPrimary))
-                .addItem(new BottomNavigation.BottomNavigationItem(R.mipmap.ic_music, "音乐").setActiveColor(R.color.colorPrimary))
-                .addItem(new BottomNavigation.BottomNavigationItem(R.mipmap.ic_video, "视频").setActiveColor(R.color.colorPrimary))
+                .setMode(NavigationBar.MODE_CLASSIC)
+                .addItem(new NavigationBar.BottomNavigationItem(R.mipmap.ic_home, "首页").setActiveColor(R.color.colorPrimary))
+                .addItem(new NavigationBar.BottomNavigationItem(R.mipmap.ic_favorite, "兴趣").setActiveColor(R.color.colorPrimary))
+                .addItem(new NavigationBar.BottomNavigationItem(R.mipmap.ic_music, "音乐").setActiveColor(R.color.colorPrimary))
+                .addItem(new NavigationBar.BottomNavigationItem(R.mipmap.ic_video, "视频").setActiveColor(R.color.colorPrimary))
                 .setTabSelectedListener(this)
                 .initialise();
 

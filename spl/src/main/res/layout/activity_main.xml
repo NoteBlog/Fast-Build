@@ -14,7 +14,7 @@
 
     </android.support.v4.widget.NestedScrollView>
 
-    <cn.noteblog.library.widget.navigationbar.BottomNavigation
+    <cn.noteblog.library.widget.navigationbar.NavigationBar
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
