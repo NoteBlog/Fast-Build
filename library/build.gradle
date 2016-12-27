@@ -28,9 +28,10 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // 使用embedded嵌入远程依赖到aar中
 //    embedded 'com.android.support:appcompat-v7:22.2.0'
+
     embedded 'com.android.support:design:22.2.0'
-    embedded 'com.android.support:recyclerview-v7:23.0.0'
     embedded 'com.android.support:cardview-v7:23.0.0'
+    embedded 'com.android.support:recyclerview-v7:23.0.0'
 
     embedded 'com.nineoldandroids:library:2.4.0'
 
