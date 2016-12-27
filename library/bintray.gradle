@@ -86,7 +86,7 @@ artifacts {
     archives sourcesJar
 }
 
-// 上传到jcenter
+// 上传到jcenter bintrayUpload
 bintray {
     user = properties.getProperty("bintray.user") // bintray 用户名
     key = properties.getProperty("bintray.key") // bintray 用户key
