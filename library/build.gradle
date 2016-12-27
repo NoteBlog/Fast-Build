@@ -35,7 +35,7 @@ dependencies {
     embedded 'com.nineoldandroids:library:2.4.0'
 
     embedded 'com.jakewharton:butterknife:5.1.1'
-    embedded 'com.github.bumptech.glide:glide:3.7.0'
+//    embedded 'com.github.bumptech.glide:glide:3.7.0'
 
 //    embedded 'com.squareup.retrofit2:retrofit:2.1.0'
 //    embedded 'com.squareup.retrofit2:converter-gson:2.1.0'
