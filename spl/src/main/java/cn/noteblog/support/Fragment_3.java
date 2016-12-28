@@ -9,12 +9,12 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 
-public class FragmentTest extends Fragment {
+public class Fragment_3 extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View contentView = inflater.inflate(R.layout.fragment_main, container, false);
+        View contentView = inflater.inflate(R.layout.fragment_sample, container, false);
 
         ButterKnife.inject(this, contentView);
 

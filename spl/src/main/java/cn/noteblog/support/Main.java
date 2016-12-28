@@ -15,7 +15,10 @@ public class Main extends AppCompatActivity implements NavigationBar.OnTabSelect
     NavigationBar navigation;
 
     private FragmentManager mFragmentManager;
-    private FragmentTest mFragmentHome;
+    private Fragment_0 mFragment0;
+    private Fragment_1 mFragment1;
+    private Fragment_2 mFragment2;
+    private Fragment_3 mFragment3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +45,11 @@ public class Main extends AppCompatActivity implements NavigationBar.OnTabSelect
         mFragmentManager = getSupportFragmentManager();
         // 开启一个Fragment事务
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        mFragmentHome = new FragmentTest();
+        mFragment0 = new Fragment_0();
         Bundle bundle = new Bundle();
         bundle.putInt("args", 0);
-        mFragmentHome.setArguments(bundle);
-        transaction.add(R.id.main_content, mFragmentHome);
+        mFragment0.setArguments(bundle);
+        transaction.add(R.id.main_content, mFragment0);
         transaction.commit();
     }
 
@@ -58,25 +61,25 @@ public class Main extends AppCompatActivity implements NavigationBar.OnTabSelect
         Bundle bundle = new Bundle();
         switch (position) {
             case 0:
-                transaction.show(mFragmentHome);
+                transaction.show(mFragment0);
                 break;
             case 1:
-                mFragmentHome = new FragmentTest();
+                mFragment1 = new Fragment_1();
                 bundle.putInt("args", 1);
-                mFragmentHome.setArguments(bundle);
-                transaction.add(R.id.main_content, mFragmentHome);
+                mFragment1.setArguments(bundle);
+                transaction.add(R.id.main_content, mFragment1);
                 break;
             case 2:
-                mFragmentHome = new FragmentTest();
+                mFragment2 = new Fragment_2();
                 bundle.putInt("args", 2);
-                mFragmentHome.setArguments(bundle);
-                transaction.add(R.id.main_content, mFragmentHome);
+                mFragment2.setArguments(bundle);
+                transaction.add(R.id.main_content, mFragment2);
                 break;
             case 3:
-                mFragmentHome = new FragmentTest();
+                mFragment3 = new Fragment_3();
                 bundle.putInt("args", 3);
-                mFragmentHome.setArguments(bundle);
-                transaction.add(R.id.main_content, mFragmentHome);
+                mFragment3.setArguments(bundle);
+                transaction.add(R.id.main_content, mFragment3);
                 break;
         }
         transaction.commit();
@@ -86,8 +89,17 @@ public class Main extends AppCompatActivity implements NavigationBar.OnTabSelect
      * 隐藏所有fragment
      */
     private void hideFragments(FragmentTransaction transaction) {
-        if (mFragmentHome != null) {
-            transaction.hide(mFragmentHome);
+        if (mFragment0 != null) {
+            transaction.hide(mFragment0);
+        }
+        if (mFragment1 != null) {
+            transaction.hide(mFragment1);
+        }
+        if (mFragment2 != null) {
+            transaction.hide(mFragment2);
+        }
+        if (mFragment3 != null) {
+            transaction.hide(mFragment3);
         }
     }
 
@@ -103,16 +115,16 @@ public class Main extends AppCompatActivity implements NavigationBar.OnTabSelect
         hideFragments(transaction);
         switch (position) {
             case 0:
-                transaction.show(mFragmentHome);
+                transaction.show(mFragment0);
                 break;
             case 1:
-                transaction.show(mFragmentHome);
+                transaction.show(mFragment1);
                 break;
             case 2:
-                transaction.show(mFragmentHome);
+                transaction.show(mFragment2);
                 break;
             case 3:
-                transaction.show(mFragmentHome);
+                transaction.show(mFragment3);
                 break;
         }
         transaction.commit();
