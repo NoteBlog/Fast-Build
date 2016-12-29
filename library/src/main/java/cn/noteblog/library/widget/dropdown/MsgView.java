@@ -1,4 +1,4 @@
-package cn.noteblog.library.widget;
+package cn.noteblog.library.widget.dropdown;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,7 +13,7 @@ import cn.noteblog.library.R;
 import cn.noteblog.library.util.UtilDensity;
 
 /**
- * 用于需要圆角矩形框背景的TextView的情况，减少直接使用TextView时引入的shape资源文件
+ * 用于需要圆角矩形框背景的TextView的情况,减少直接使用TextView时引入的shape资源文件
  */
 public class MsgView extends TextView {
 
