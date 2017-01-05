@@ -16,11 +16,11 @@
 
 package cn.noteblog.library.mvp;
 
-public interface BaseView<T> {
-
-    /**
-     * 该方法作用是在将presenter实例传入view中，其调用时机是presenter实现类的构造函数中。
-     */
-    void setPresenter(T presenter);
-
-}
+//public interface BaseView<T> {
+//
+//    /**
+//     * 该方法作用是在将presenter实例传入view中，其调用时机是presenter实现类的构造函数中。
+//     */
+//    void setPresenter(T presenter);
+//
+//}

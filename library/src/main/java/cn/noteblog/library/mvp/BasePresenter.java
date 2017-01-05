@@ -16,11 +16,11 @@
 
 package cn.noteblog.library.mvp;
 
-public interface BasePresenter {
-
-    /**
-     * 该方法的作用是presenter开始获取数据并调用view中方法改变界面显示，其调用时机是在Activity类/Fragment类的onResume方法中
-     */
-    void start();
-
-}
+//public interface BasePresenter {
+//
+//    /**
+//     * 该方法的作用是presenter开始获取数据并调用view中方法改变界面显示，其调用时机是在Activity类/Fragment类的onResume方法中
+//     */
+//    void start();
+//
+//}

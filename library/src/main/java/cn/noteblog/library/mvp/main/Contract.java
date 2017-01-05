@@ -18,39 +18,39 @@ package cn.noteblog.library.mvp.main;
 
 import java.util.ArrayList;
 
-import cn.noteblog.library.mvp.BasePresenter;
-import cn.noteblog.library.mvp.BaseView;
+//import cn.noteblog.library.mvp.BasePresenter;
+//import cn.noteblog.library.mvp.BaseView;
 
 /**
  * This specifies the contract between the view and the presenter.
  * -
  * 契约类，用来来统一管理view与presenter的所有的接口，这种方式使得view与presenter中有哪些功能，一目了然，维护起来也方便
  */
-interface Contract {
-
-    interface View extends BaseView<Presenter> {
-
-        void showError();
-
-        void showLoading();
-
-        void stopLoading();
-
-        void showResults(ArrayList<String> list);
-
-        void showNetworkError();
-    }
-
-    interface Presenter extends BasePresenter {
-
-        void loadPosts(long date, boolean clearing);
-
-        void refresh();
-
-        void loadMore();
-
-        void startReading(int position);
-
-        void goToSettings();
-    }
-}
+//interface Contract {
+//
+//    interface View extends BaseView<Presenter> {
+//
+//        void showError();
+//
+//        void showLoading();
+//
+//        void stopLoading();
+//
+//        void showResults(ArrayList<String> list);
+//
+//        void showNetworkError();
+//    }
+//
+//    interface Presenter extends BasePresenter {
+//
+//        void loadPosts(long date, boolean clearing);
+//
+//        void refresh();
+//
+//        void loadMore();
+//
+//        void startReading(int position);
+//
+//        void goToSettings();
+//    }
+//}
