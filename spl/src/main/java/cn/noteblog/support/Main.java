@@ -4,6 +4,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -128,5 +129,26 @@ public class Main extends AppCompatActivity implements NavigationBar.OnTabSelect
                 break;
         }
         transaction.commit();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        Log.e("Test", "onRestart()");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.e("Test", "onPause()");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.e("Test", "onStop()");
     }
 }
